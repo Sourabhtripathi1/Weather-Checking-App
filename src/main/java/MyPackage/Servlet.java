@@ -1,7 +1,7 @@
 package MyPackage;
 
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
+/*import jakarta.servlet.annotation.WebServlet;*/
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -52,7 +52,8 @@ public class Servlet extends HttpServlet {
 		        String apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey;
 
 		        try {
-		            URL url = new URL(apiUrl);
+		            @SuppressWarnings("deprecation")
+					URL url = new URL(apiUrl);
 		            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 		            connection.setRequestMethod("GET");
 
